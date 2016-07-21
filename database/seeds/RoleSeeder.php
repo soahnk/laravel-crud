@@ -15,6 +15,7 @@ class RoleSeeder extends Seeder
             "Admin",
             "Member"
         ];
+
         foreach ($roles as $role ) {
             \App\Models\Role::create([
                 'name'=>$role 
