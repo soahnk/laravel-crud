@@ -17,7 +17,7 @@ class CreateUsers extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->date('dob');
+            $table->date('dob'); 
             $table->rememberToken();
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')
