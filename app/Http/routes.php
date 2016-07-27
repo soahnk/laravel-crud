@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
-});
+}) ;
+Route::get('users' , ['as' => 'userList' , 'uses'=> 'SohanController@lists']);
+Route::get('create' , [ 'as'=> 'addUser' , 'uses'=> 'SohanController@creates']);
+Route::post('users', ['as' => 'saveUser' , 'uses' => 'SohanController@stores'] );
+Route::get('users/{id}/edit', ['as'=> 'editUser' , 'uses'=>'SohanController@edits']  );
+Route::post('users/{id}', [  'as' => 'updateUser' , 'uses' => 'SohanController@updates'] );
+Route::get('users/{id}/delete', ['as'=> 'deleteUser' , 'uses'=>'SohanController@deletes']  );
+
+
+
+

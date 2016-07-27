@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role_id', 'dob' , 'action'
     ];
 
     /**
@@ -27,4 +27,10 @@ class User extends Authenticatable
     function role() {
         return $this->belongsTo(Role::class);
     }
+
+    function setPasswordAttribute($value) {
+        $this-> attributes['password'] = bcrypt($value) ; 
+    }
+
 }
+
